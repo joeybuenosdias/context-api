@@ -21,7 +21,6 @@ export const Form = () => {
             {({ handleAddTodo }) => {
                 return (
                     <form onSubmit={e => e.preventDefault()}>
-                        <h4>Todo Form</h4>
                         <input
                             value={text}
                             onChange={e => setText(e.target.value)}

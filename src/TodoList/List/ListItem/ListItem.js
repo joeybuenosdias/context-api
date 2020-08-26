@@ -2,7 +2,6 @@ import React from 'react'
 import Context from '../../../Context/Context'
 
 export const ListItem = ({ id, text }) => {
-
     return (
         <Context.Consumer>
             {({ handleToggleTodo, handleDeleteTodo }) => {

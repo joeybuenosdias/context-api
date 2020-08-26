@@ -6,7 +6,6 @@ export const List = () => {
     return (
         <Context.Consumer>
             {({ todoList }) => {
-                console.log('todoList', todoList)
                 return (
                     <ul>
                         {todoList.map((item) => {
