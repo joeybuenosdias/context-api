@@ -11,6 +11,7 @@ export const Form = () => {
             note: {
                 id,
                 text,
+                completed: false,
             }
         })
 

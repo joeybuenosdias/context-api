@@ -21,6 +21,35 @@ const reducer = (state, action) => {
                 ...state,
                 noteText: action.noteText
             }
+        case 'UPDATE_NOTE':
+            const { id } = action
+            return {
+                ...state,
+                notes: {
+                    ...state.notes,
+                    [id]: {
+                        ...state.notes[id],
+                        completed: !state.notes[id].completed
+                    }
+                }
+
+            }
+        case 'DELETE_NOTE':
+            const newNotes = Object.values(state.notes)
+                .filter(item => item.id !== action.id)
+                .reduce((prev, curr) => {
+                    return {
+                        ...prev,
+                        [curr.id]: {
+                            ...curr
+                        }
+                    }
+                }, {})
+
+            return {
+                ...state,
+                notes: newNotes
+            }
         default:
             throw new Error()
     }
